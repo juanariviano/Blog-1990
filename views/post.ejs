@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1990 Blog</title>
+    <link rel="stylesheet" href="styles/post.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <h1>1990 Blog</h1>
+      <a href="/">Home</a>
+    </div>
+
+    <% if(person && person.length > 0) { %> <% for(var i = 0; i< person.length;
+    i++){ %>
+
+    <div class="card">
+      <h3><%= person[i] %></h3>
+      <p><%= posts[i] %></p>
+    </div>
+
+    <br />
+    <div class="butt">
+      <form action="/post/<%= i %>?_method=DELETE" method="post">
+        <button>Delete this post</button>
+      </form>
+      <form action="/post/<%= i %>/edit" method="GET">
+        <button>Edit this post</button>
+      </form>
+    </div>
+
+    <% } %> <% } else { %>
+    <h1>No post</h1>
+    <% } %>
+  </body>
+</html>

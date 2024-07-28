@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1990 Blog</title>
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <h1>1990 Blog</h1>
+      <a href="/post">Post</a>
+    </div>
+
+    <form action="/post" method="post" onsubmit="formData()">
+      <div class="name">
+        <label for="name">Name : </label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Input your name"
+          required
+        />
+      </div>
+      <div class="write">
+        <label for="write">Your Writings : </label>
+        <textarea
+          name="write"
+          id="write"
+          placeholder="Write Here"
+          required
+        ></textarea>
+      </div>
+
+      <button type="submit" onclick="submitButton()">Submit</button>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      function submitButton() {
+        alert("Your post has been submitted!");
+      }
+    </script>
+  </body>
+</html>
